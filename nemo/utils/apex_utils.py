@@ -14,7 +14,7 @@ def _reconfigure_microbatch_calculator(
 
     import megatron.core.num_microbatches_calculator as mb_calculator
 
-    mb_calculator._GLOBAL_NUM_MICROBATCHES_CALCULATOR = mb_calculator.build_num_microbatches_calculator(
+    mb_calculator._GLOBAL_NUM_MICROBATCHES_CALCULATOR = mb_calculator._build_num_microbatches_calculator(
         rank, rampup_batch_size, global_batch_size, micro_batch_size, data_parallel_size, decrease_batch_size_if_needed=False
     )
 
