@@ -870,6 +870,7 @@ class MegatronGPTSFTModel(NLPAdapterModelMixin, MegatronGPTModel):
             global_batch_size=self.cfg.data.validation_ds.global_batch_size,
             micro_batch_size=self.cfg.data.validation_ds.micro_batch_size,
             data_parallel_size=parallel_state.get_data_parallel_world_size(),
+            decrease_batch_size_if_needed=False,
         )
         return super().on_validation_epoch_start()
 
